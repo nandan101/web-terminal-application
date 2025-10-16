@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: monospace;
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+#terminal {
+  padding: 1rem;
+  height: 90vh;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  background: inherit;
+  color: inherit;
+  border-top: 1px solid #ccc;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f0f0f0;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+body.dark .top-bar {
+  background: #1f1f1f;
+  border-color: #333;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #ddd;
+  border: none;
+  border-radius: 4px;
+}
+
+body.dark button {
+  background: #333;
+  color: #fff;
+}
