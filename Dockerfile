@@ -3,7 +3,8 @@ FROM node:22.1.0-slim as base
 
 # Install required packages for node-gyp
 RUN apt-get update && \
-    apt-get install -y python3 make g++ curl gnupg2 ca-certificates nginx && \
+bash
+apt-get install -y --ignore-scripts python3 make g++ curl gnupg2 ca-certificates nginx && \
     apt-get clean
 
 # Set working directory
