@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,8 +88,8 @@
       </ul>
 
       <h3 class="text-lg font-semibold mb-2">📂 Useful Shortcuts</h3>
-      <ul class="list-disc ml-6 space-y-1">
-        <li><strong>!!</strong>: Repeat last command</li>
+html
+<li><strong>!!</strong>: Repeat last command</li>
         <li><strong>Ctrl + C</strong>: Kill running command</li>
         <li><strong>Ctrl + L</strong>: Clear terminal screen</li>
         <li><strong>Tab</strong>: Auto-complete commands or paths</li>
@@ -98,16 +99,19 @@
   </div>
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/socket.io-client/dist/socket.io.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/xterm/lib/xterm.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit/lib/xterm-addon-fit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2.3.0/dist/socket.io.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xterm@4.16.0/lib/xterm.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@1.0.0/lib/xterm-addon-fit.min.js"></script>
 
   <script>
-    const socket = io();
+    const socket = io({
+      transports: ['websocket', 'polling']
+    });
 
     const term = new Terminal({
       cursorBlink: true,
       theme: {
+        background: '#1e1e1e',
         background: '#1e1e1e',
         foreground: '#d4d4d4'
       }
