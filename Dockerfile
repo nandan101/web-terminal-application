@@ -1,6 +1,6 @@
 # Stage 1: Build the Node.js server
 FROM node:22.1.0-slim as base
-
+dockerfile
 # Install required packages for node-gyp
 RUN apt-get update && \
     apt-get install -y python3 make g++ curl gnupg2 ca-certificates nginx && \
@@ -9,7 +9,7 @@ RUN apt-get update && \
 # Set working directory
 WORKDIR /app
 
-# Copy app files
+# Copy app files (without copying sensitive data)
 COPY . .
 
 # Install dependencies
